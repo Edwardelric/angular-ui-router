@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ui-router测试</title>
+	<style type="text/css">
+	html,body,ul,li,dl,dt,dd,p{margin:0;padding:0;}
+	ul,li{display:inline-block;}
+	.nav{padding:10px 0;}
+	.wrapper{padding:10px;}
+	</style>
+</head>	
+
+<body class="wrapper">
+	<div ng-show="loading">
+		<span class="spinner"></span>
+	</div>
+	<div class="banner">banner</div>
+	<ul class="nav">
+		<li><a ui-sref="home">首页</a></li>
+		<li><a ui-sref="service">资源和服务</a></li>
+		<li><a ui-sref="case">成功案例</a></li>
+		<li><a ui-sref="cooperate">合作保障</a></li>
+		<li><a ui-sref="concat">联系我们</a></li>
+	</ul>
+	<div ui-view></div>
+	<h4><a ui-sref="home">这里是首页的内容</a></h4>
+	<h5><a ui-sref="service">资源服务</h5>
+	<h5><a ui-sref="case">成功案例</a></h5>
+	<h5><a ui-sref="concat">联系我们</a></h5>
+<script type="text/javascript" src="../assets/libs/require.js" data-main="../assets/js/app.js"></script>
+</body>
+</html>

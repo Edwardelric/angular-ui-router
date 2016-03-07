@@ -1,0 +1,29 @@
+angular.module('app').config(function($stateProvider,$urlRouterProvider){
+	$urlRouterProvider.otherwise('/home');
+	$stateProvider.state('home',{
+		url:'/home',
+		templateUrl:'views/home/home.ejs',
+		resolve:{
+			load:['$ocLazyLoad',function($ocLazyLoad){
+				return $ocLazyLoad.load(['../assets/js/home/ctrl.js']);
+			}]
+		},
+		controller:'homeCtrl'
+	}).state('service',{
+		url:'/service',
+		templateUrl:'views/service/service.ejs',
+		controllerUrl:'../assets/js/service/ctrl.js'
+	}).state('case',{
+		url:'/case',
+		templateUrl:'views/case/case.ejs',
+		controllerUrl:'../assets/js/case/ctrl.js'
+	}).state('cooperate',{
+		url:'/cooperate/123',
+		templateUrl:'views/cooperate/cooperate.ejs',
+		controllerUrl:'../assets/js/cooperate/ctrl.js'
+	}).state('concat',{
+		url:'/concat',
+		templateUrl:'views/concat/concat.ejs',
+		controllerUrl:'../assets/js/concat/ctrl.js'
+	});
+})
